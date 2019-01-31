@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Attra.EWallet.LandingPage" BackgroundImage="home.jpg">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Margin="0,40,0,0"  WidthRequest="175" HeightRequest="96" Source="App_logo.png" />
+
+            <StackLayout Grid.Row="1" Margin="40,40,40,0">
+
+                <Label Text="Hi" FontSize="80" TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="Welcome to Attra-Wallet" FontSize="20" TextColor="White" HorizontalOptions="Center"/>
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Margin="40,40,40,50">
+
+
+                <Button Text="Register" BackgroundColor="#f44e1b" TextColor="White" Clicked="Button_Clicked"/>
+ 
+            </StackLayout>
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

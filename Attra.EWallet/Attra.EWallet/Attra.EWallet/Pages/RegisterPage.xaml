@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Attra.EWallet.ViewModels"
+             x:Class="Attra.EWallet.Pages.RegisterPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+
+            <Style x:Key="entryKey" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="white" />
+
+
+
+            </Style>
+            <Style x:Key="PinEntry" TargetType="Entry">
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <Setter Property="IsPassword" Value="True"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <!--<Setter Property="HeightRequest" Value="50"/>-->
+                <!--<Setter Property="Margin" Value="8,0"/>-->
+                <Setter Property="PlaceholderColor" Value="white" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Default">
+        <Grid BackgroundColor="Gray">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+       
+
+            <StackLayout Grid.Row="0" HorizontalOptions="Center" Margin="0,40,0,0">
+
+                <Label Text="Create a Attra wallet account" FontSize="20" TextColor="White" />
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Margin="40,20,40,0" Orientation="Vertical" Padding="0">
+
+                <StackLayout Orientation="Horizontal">
+
+                    <ImageButton WidthRequest="24" HeightRequest="24" />
+                    <Label Text="Mobile Number" FontSize="16" TextColor="White" />
+
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Margin="36,0,0,0">
+
+                    <Entry x:Name="entPhNbr" Placeholder="10 Digit mobile Number" Keyboard="Numeric"  Style="{StaticResource entryKey}"
+                           TextChanged="Entry_TextChanged" Unfocused="EntPhNbr_Unfocused" />
+                    <Label x:Name="entPhNbrError" FontSize="12" IsVisible="False" TextColor="Red" HorizontalTextAlignment="End" />
+                </StackLayout>
+
+
+
+                <StackLayout Orientation="Horizontal">
+
+                    <ImageButton  WidthRequest="24" HeightRequest="24" />
+                    <Label Text="Name" FontSize="16" TextColor="White" />
+
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Margin="36,0,0,0">
+
+                        <Entry x:Name="entName" Placeholder="Full Name" Style="{StaticResource entryKey}" />
+                    
+                        <Label x:Name="entNameError" FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End" />
+
+                    </StackLayout>
+
+ 
+                <StackLayout Orientation="Horizontal">
+
+                    <ImageButton WidthRequest="24" HeightRequest="24" />
+                    <Label Text="Email" FontSize="16" TextColor="White" />
+
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Margin="36,0,0,0">
+
+                    <Entry Placeholder="Email Id" Style="{StaticResource entryKey}" />
+
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal">
+
+                    <ImageButton WidthRequest="24" HeightRequest="24" />
+                    <Label Text="Set Pin" FontSize="16" TextColor="White" />
+
+                </StackLayout>
+                <!--<StackLayout Orientation="Vertical" Margin="35,0,0,0">
+
+                    <Entry Placeholder="Set 4 digit pin" Style="{StaticResource entryKey}" />
+
+                </StackLayout>-->
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="35,0,0,0">
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin1" Style="{StaticResource PinEntry}" Placeholder="Set" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                        
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin2" Style="{StaticResource PinEntry}" Placeholder="4" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                        
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin3" Style="{StaticResource PinEntry}" Placeholder="Digit" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                       
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin4" Style="{StaticResource PinEntry}" Placeholder="PIN" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                        
+                    </StackLayout>
+                </StackLayout>
+
+
+                <Button Text="Continue" BackgroundColor="#f44e1b" Margin="0,4,0,0" Padding="0" TextColor="White"/>
+
+
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Margin="40,40,40,20">
+
+
+                <BoxView HeightRequest="1" Color="White" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Label Text="Already have an account ?" TextColor="White" />
+                    <Label Text="-SIGN IN" TextColor="Cyan" FontSize="16" />
+                </StackLayout>
+
+            </StackLayout>
+
+          
+
+        </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage> 
