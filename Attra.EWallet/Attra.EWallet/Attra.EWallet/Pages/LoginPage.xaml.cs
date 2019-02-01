@@ -1,72 +1,72 @@
-﻿using Attra.EWallet.ViewModels;
-using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Attra.EWallet.ServicesLogin.Modals;
+using Attra.EWallet.ServicesLogin;
+using Attra.EWallet.Pages.Menu;
 
-namespace Attra.EWallet
+namespace Attra.EWallet.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
-    {
-       // public ObservableCollection<string> Items { get; set; }
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class LoginPage : ContentPage
+	{
+		public LoginPage ()
+		{
+			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
 
-            //new Comment
-
-        public LoginPage()
-        {
-
-            //Navigation.PushAsync(new LandingPage());
-            //         InitializeComponent();
-
-            //         Items = new ObservableCollection<string>
-            //         {
-            //             "Item 1",
-            //             "Item 2",
-            //             "Item 3",
-            //             "Item 4",
-            //             "Item 5"
-            //         };
-
-            //MyListView.ItemsSource = Items;
-
-            //var vm = new LoginViewModel();
-            //this.BindingContext = vm;
-            //vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error", "Invalid Login, try again", "OK");
-            //vm.RedirectHomePage += () =>   Navigation.PushModalAsync(new Page());
-            InitializeComponent();
 
             Email.Completed += (object sender, EventArgs e) =>
+
             {
                 Password.Focus();
             };
-
-            //Password.Completed +=  (object sender, EventArgs e) =>
-            //{
-            //   vm.SubmitCommand.Execute(null);
-            //   // Navigation.RemovePage(this);
-            //};
         }
-        private async void NavigateButton_OnClicked(object sender, EventArgs e)
+
+        private async void OnTapRegister(object sender, EventArgs e)
         {
-          //  var model = new LoginViewModel();
-          //  this.BindingContext = model;
-            
-            if (Email.Text == "premananda.routray@attra.com.au" && Password.Text == "password")
-            {
-                await Navigation.PushModalAsync(new LandingPage());
+            await Navigation.PushModalAsync(new Pages.RegisterPage());
+        }
 
-            }
-            else
+        private async void OnLoginClick(object sender, EventArgs e)
+        {
+            LoginApi Login = new LoginApi();
+            try
             {
-                await DisplayAlert("Error", "Invalid Login, try again", "OK");
-                
+                bool res = await Login.LoginUserDetails(Email.Text, Password.Text);
+                if (res)
+                {
+                    await Navigation.PushModalAsync(new MasterDetail());
+                }
+                //if (Email.Text == "send2abhishek@live.com" && Password.Text == "Default_pass")
+
+                //{
+                //    await Navigation.PushModalAsync(new LandingPage());
+                //}
+                else
+                {
+                    await DisplayAlert("Error", "Invalid Login, try again", "OK");
+                }
+            }
+            catch(Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message + ex.StackTrace, "OK");
+
             }
         }
 
+       // public ListStringTypeConverter Email { get; }
+
+        //public void  { get; set; }
+
+        private async void OnTapForgotPswd(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ForgotPswdPage());
+        }
     }
 }

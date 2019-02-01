@@ -176,7 +176,11 @@
                 <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="Center" Margin="0,8,0,0">
 
                     <Label Text="Already have an account ?" TextColor="White" />
-                    <Label Text="-SIGN IN" TextColor="Cyan" FontSize="16" />
+                    <Label Text="-SIGN IN" TextColor="Cyan" FontSize="16">                        
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapSignin" NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
 
 
 

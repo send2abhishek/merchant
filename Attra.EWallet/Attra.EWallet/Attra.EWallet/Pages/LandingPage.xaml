@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Attra.EWallet.LandingPage" BackgroundImage="home.jpg">
+             x:Class="Attra.EWallet.LandingPage">
     <ContentPage.Content>
-        <Grid BackgroundColor="Black">
+        <Grid BackgroundColor="DarkSlateGray">
             <Grid.RowDefinitions>
 
                 <RowDefinition Height="Auto"/>
@@ -11,24 +11,32 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Image Grid.Row="0" Margin="0,40,0,0"  WidthRequest="175" HeightRequest="96" Source="App_logo.png" />
+            <Image Grid.Row="0" Margin="0,90,0,0"  WidthRequest="175" HeightRequest="96" 
+                   Source="App_logo.png" />
 
-            <StackLayout Grid.Row="1" Margin="40,40,40,0">
+            <StackLayout Grid.Row="1" Margin="0,40,0,0">
 
                 <Label Text="Hi" FontSize="80" TextColor="White" HorizontalOptions="Center"/>
                 <Label Text="Welcome to Attra-Wallet" FontSize="20" TextColor="White" HorizontalOptions="Center"/>
 
             </StackLayout>
 
-            <StackLayout Grid.Row="2" Margin="40,40,40,50">
+            <StackLayout Grid.Row="2" Margin="0,0,0,70" Padding="20">
 
+                <Button Text="Register" BackgroundColor="IndianRed" TextColor="White" Clicked="Button_Clicked" 
+                        Margin="100,0,100,0"/>
+                <BoxView HeightRequest="1"/>
 
-                <Button Text="Register" BackgroundColor="#f44e1b" TextColor="White" Clicked="Button_Clicked"/>
- 
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Label Text="Already have account?" TextColor="White"/>
+                    <Label Text="Login" TextColor="DeepSkyBlue"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LoginTapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                </StackLayout>
             </StackLayout>
-
-
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>

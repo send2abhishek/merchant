@@ -1,4 +1,5 @@
-﻿using Attra.EWallet.Pages.Menu;
+﻿using Attra.EWallet.Pages;
+using Attra.EWallet.Pages.Menu;
 using System;
 
 using Xamarin.Forms;
@@ -14,8 +15,7 @@ namespace Attra.EWallet
             InitializeComponent();
 
             MainPage = new NavigationPage(new LandingPage());
-
-
+            //MainPage = new LoginPage();
         }
 
         protected override void OnStart()

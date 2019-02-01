@@ -16,9 +16,7 @@ namespace Attra.EWallet
 		public LandingPage ()
 		{
 			InitializeComponent ();
-            //this.BackgroundImage = "background_screen_two.png";
             NavigationPage.SetHasNavigationBar(this, false);
-
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -26,6 +24,11 @@ namespace Attra.EWallet
 
             await Navigation.PushAsync(new RegisterPage());
 
+        }
+
+        private async void LoginTapped(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new Pages.LoginPage());
         }
     }
 }

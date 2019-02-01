@@ -12,11 +12,18 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />
+
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Attra.EWallet.DAL\Attra.EWallet.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\LoginPage1.xaml.cs">
+      <DependentUpon>LoginPage1.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -26,10 +33,16 @@
     <EmbeddedResource Update="Pages\DetailViews\InfoScreen2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ForgotPswdPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\LandingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\LoginPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Menu\MasterDetail.xaml">
@@ -60,6 +73,9 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Pages\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\LoginPage1.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Pages\MainPage.xaml">
