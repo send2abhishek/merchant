@@ -1,63 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Attra.EWallet.LoginPage"
-             BackgroundImage="Beautiful_flowers.jpg">
-  <!--<ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
-            
-    --><!--Built in Cells--><!--
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>
-    
-    --><!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    --><!--
-  </ListView>-->
-
+             x:Class="Attra.EWallet.Pages.LoginPage" BackgroundColor="DarkGray">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
-            <BoxView HeightRequest="10"/>
-            <!--HorizontalOptions="Center"-->
-            <!--WidthRequest="50"-->
-
-            <Frame HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Center"  Margin="0" Padding="0" BackgroundColor="White" >
-                
-                <Image   VerticalOptions="Start" WidthRequest="40"   Source="E_wallet.png" Margin="0,3,0,0"/>
-            </Frame>
-            
-            <Frame BackgroundColor="MediumPurple" Opacity="0.6"  HasShadow="False">
-                <StackLayout Orientation="Vertical" Spacing="10">
-                    <Entry x:Name="Email" FontSize="Medium" Text="{Binding Email}" Placeholder="Email"   
-                           PlaceholderColor="DarkOrange" HeightRequest="40"   
-                           Keyboard="Email"  
-                           TextColor="White"/>
-                    <Entry x:Name="Password" FontSize="Medium" Text="{Binding Password}" Placeholder="Password"   
-                           PlaceholderColor="DarkOrange" HeightRequest="40"   
-                           IsPassword="True"  
-                           TextColor="White"/>
+        <StackLayout>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="AUTO"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Margin="0,30,0,0" Grid.Row="0" Text="LOGIN" FontSize="Medium" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+                <StackLayout Grid.Row="1" Margin="0,20,0,0">
+                    <StackLayout>
+                        <Label Text="Mobile Number" FontSize="Micro" TextColor="White"/>
+                        <Entry x:Name="Email" Placeholder="10 digit mobile number" FontSize="Micro" TextColor="White" Margin="0"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Password" FontSize="Micro" TextColor="White"/>
+                        <Entry x:Name="Password" Placeholder="******" FontSize="Micro" TextColor="White" Margin="0"/>
+                        <Label Text="Forgot Password?" FontAttributes="Italic" HorizontalOptions="End" FontSize="Micro" TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnTapForgotPswd" NumberOfTapsRequired="1"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <Button Text="Login" FontSize="Small" TextColor="White" WidthRequest="50" Clicked="OnLoginClick"/>                    
                 </StackLayout>
-            </Frame>
-            <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
-                    FontAttributes="None" FontSize="Micro" HorizontalOptions="Center"  
-                    BackgroundColor="#088da5" WidthRequest="200" HeightRequest="35" BorderRadius="30" Clicked="NavigateButton_OnClicked" />
+                <StackLayout Grid.Row="2" VerticalOptions="End">
+                    <BoxView HeightRequest="2" BackgroundColor="White"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Don't have an account?" TextColor="White" FontSize="Micro"/>
+                        <Label Text="REGISTER" TextColor="BlueViolet" FontSize="Micro" FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <!--<TapGestureRecognizer Tapped="OnTapRegister" NumberOfTapsRequired="1"/>-->
+                            </Label.GestureRecognizers>
+                        </Label>                        
+                    </StackLayout>                    
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
