@@ -28,7 +28,7 @@ namespace Attra.EWallet
 
         private async void LoginTapped(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new Pages.LoginPage());
         }
     }
 }

@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Attra.EWallet.ServicesLogin.Modals;
 using Attra.EWallet.ServicesLogin;
+using Attra.EWallet.Pages.Menu;
 
 namespace Attra.EWallet.Pages
 {
@@ -27,7 +28,12 @@ namespace Attra.EWallet.Pages
             };
         }
 
-        public async void OnLoginClick(object sender, EventArgs e)
+        private async void OnTapRegister(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Pages.RegisterPage());
+        }
+
+        private async void OnLoginClick(object sender, EventArgs e)
         {
             LoginApi Login = new LoginApi();
             try
@@ -35,7 +41,7 @@ namespace Attra.EWallet.Pages
                 bool res = await Login.LoginUserDetails(Email.Text, Password.Text);
                 if (res)
                 {
-                    await Navigation.PushModalAsync(new LandingPage());
+                    await Navigation.PushModalAsync(new MasterDetail());
                 }
                 //if (Email.Text == "send2abhishek@live.com" && Password.Text == "Default_pass")
 

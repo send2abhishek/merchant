@@ -18,7 +18,7 @@
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Password" FontSize="Micro" TextColor="White"/>
-                        <Entry x:Name="Password" Placeholder="******" FontSize="Micro" TextColor="White" Margin="0"/>
+                        <Entry x:Name="Password" Placeholder="******" IsPassword="True" FontSize="Micro" TextColor="White" Margin="0"/>
                         <Label Text="Forgot Password?" FontAttributes="Italic" HorizontalOptions="End" FontSize="Micro" TextColor="White">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnTapForgotPswd" NumberOfTapsRequired="1"/>
@@ -33,7 +33,7 @@
                         <Label Text="Don't have an account?" TextColor="White" FontSize="Micro"/>
                         <Label Text="REGISTER" TextColor="BlueViolet" FontSize="Micro" FontAttributes="Bold">
                             <Label.GestureRecognizers>
-                                <!--<TapGestureRecognizer Tapped="OnTapRegister" NumberOfTapsRequired="1"/>-->
+                                <TapGestureRecognizer Tapped="OnTapRegister" NumberOfTapsRequired="1"/>
                             </Label.GestureRecognizers>
                         </Label>                        
                     </StackLayout>                    

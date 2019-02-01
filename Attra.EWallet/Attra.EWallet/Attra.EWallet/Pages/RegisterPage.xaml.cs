@@ -29,6 +29,12 @@ namespace Attra.EWallet.Pages
         //        SetValue(PinProperty, value);
         //    }
         //}
+
+        private async void OnTapSignin(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Pages.LoginPage());
+        }
+
         public RegisterPage()
         {
             InitializeComponent();
