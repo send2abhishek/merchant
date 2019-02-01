@@ -5,7 +5,7 @@
              x:Class="Attra.EWallet.Pages.RegisterPage">
     <ContentPage.Resources>
         <ResourceDictionary>
-
+           
 
             <Style x:Key="entryKey" TargetType="Entry">
                 <Setter Property="PlaceholderColor" Value="white" />
@@ -34,28 +34,31 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
        
 
-            <StackLayout Grid.Row="0" HorizontalOptions="Center" Margin="0,40,0,0">
+            <StackLayout Grid.Row="0" HorizontalOptions="Center" Margin="0,20,0,0">
 
                 <Label Text="Create a Attra wallet account" FontSize="20" TextColor="White" />
 
             </StackLayout>
 
-            <StackLayout Grid.Row="1" Margin="40,20,40,0" Orientation="Vertical" Padding="0">
+            <StackLayout Grid.Row="1" Margin="40,20,40,0" Orientation="Vertical" Padding="0" Spacing="0">
 
                 <StackLayout Orientation="Horizontal">
 
                     <ImageButton WidthRequest="24" HeightRequest="24" />
-                    <Label Text="Mobile Number" FontSize="16" TextColor="White" />
+                    <Label Text="Mobile Number" FontSize="16" TextColor="White"  />
 
                 </StackLayout>
                 <StackLayout Orientation="Vertical" Margin="36,0,0,0">
 
                     <Entry x:Name="entPhNbr" Placeholder="10 Digit mobile Number" Keyboard="Numeric"  Style="{StaticResource entryKey}"
-                           TextChanged="Entry_TextChanged" Unfocused="EntPhNbr_Unfocused" />
+                          TextChanged="Entry_TextChanged" MaxLength="10" />
                     <Label x:Name="entPhNbrError" FontSize="12" IsVisible="False" TextColor="Red" HorizontalTextAlignment="End" />
                 </StackLayout>
 
@@ -69,10 +72,10 @@
                 </StackLayout>
                 <StackLayout Orientation="Vertical" Margin="36,0,0,0">
 
-                        <Entry x:Name="entName" Placeholder="Full Name" Style="{StaticResource entryKey}" />
+                        <Entry x:Name="entName" Placeholder="Full Name" Style="{StaticResource entryKey}" MaxLength="15" TextChanged="Entry_TextChanged" />
                     
                         <Label x:Name="entNameError" FontSize="12" IsVisible="False" TextColor="Red"
-                               HorizontalTextAlignment="End" />
+                               HorizontalTextAlignment="End"  />
 
                     </StackLayout>
 
@@ -85,24 +88,28 @@
                 </StackLayout>
                 <StackLayout Orientation="Vertical" Margin="36,0,0,0">
 
-                    <Entry Placeholder="Email Id" Style="{StaticResource entryKey}" />
+                        <Entry x:Name="entEmail" Placeholder="Email Id" Style="{StaticResource entryKey}" TextChanged="Entry_TextChanged" />
 
-                </StackLayout>
+                        <Label x:Name="entEmailError" FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End"  />
+
+                    </StackLayout>
 
 
                 <StackLayout Orientation="Horizontal">
 
                     <ImageButton WidthRequest="24" HeightRequest="24" />
-                    <Label Text="Set Pin" FontSize="16" TextColor="White" />
+                    <Label Text="Employee ID" FontSize="16" TextColor="White" />
 
                 </StackLayout>
-                <!--<StackLayout Orientation="Vertical" Margin="35,0,0,0">
+                <StackLayout Orientation="Vertical" Margin="35,0,0,0">
 
-                    <Entry Placeholder="Set 4 digit pin" Style="{StaticResource entryKey}" />
+                        <Entry x:Name="entEmpId" Placeholder="Employee ID" Style="{StaticResource entryKey}" Keyboard="Numeric" />
+                        <Label x:Name="entEmpIdError" FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End"  />
+                    </StackLayout>
 
-                </StackLayout>-->
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="35,0,0,0">
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="35,0,0,0">
                     <StackLayout Orientation="Vertical">
                         <local:CutomEntry x:Name="Pin1" Style="{StaticResource PinEntry}" Placeholder="Set" >
                             <Entry.Behaviors>
@@ -136,31 +143,51 @@
                         </local:CutomEntry>
                         
                     </StackLayout>
+                </StackLayout>-->
+
+                </StackLayout>
+                <StackLayout Grid.Row="3" HorizontalOptions="Center" Spacing="0">
+
+
+
+                    <Label Text="By Clicking continue you are accepting" TextColor="White" FontSize="Small" />
+
+                    <Label Text="Terms and Conditions" TextColor="Cyan" FontSize="Small"  Margin="40,0,40,0"/>
                 </StackLayout>
 
 
-                <Button Text="Continue" BackgroundColor="#f44e1b" Margin="0,4,0,0" Padding="0" TextColor="White"/>
+
+                <StackLayout Grid.Row="4" Margin="50,26,50,0">
+                
+                
+                    <Button Text="Continue" BackgroundColor="#f44e1b"  TextColor="White" Clicked="Button_Clicked"/>
+
+                </StackLayout>
+ 
+                <StackLayout Grid.Row="5" Margin="60,20,60,0">
+                    
+                        <BoxView HeightRequest="1" Color="White" />
+                   
+                       
+                       
+                </StackLayout>
 
 
-
-            </StackLayout>
-
-            <StackLayout Grid.Row="2" Margin="40,40,40,20">
-
-
-                <BoxView HeightRequest="1" Color="White" />
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="Center" Margin="0,8,0,0">
 
                     <Label Text="Already have an account ?" TextColor="White" />
                     <Label Text="-SIGN IN" TextColor="Cyan" FontSize="16" />
+
+
+
+
                 </StackLayout>
 
-            </StackLayout>
 
-          
 
-        </Grid>
+
+
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage> 
