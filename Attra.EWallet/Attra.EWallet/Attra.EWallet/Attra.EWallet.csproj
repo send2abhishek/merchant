@@ -11,6 +11,10 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+<<<<<<< HEAD
+=======
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />
+>>>>>>> 8ea55bf8cc9ff2f6c3f2392e8ff5f260eb2d588b
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
 
@@ -49,9 +53,6 @@
     <EmbeddedResource Update="Pages\Menu\MasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RegisterPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\DetailViews\TranHistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -86,6 +87,12 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Pages\Menu\MasterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\OtpVerfiyPopUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\OtpVerify.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Pages\RegisterPage.xaml">
