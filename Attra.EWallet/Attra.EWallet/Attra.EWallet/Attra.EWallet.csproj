@@ -54,6 +54,9 @@
     <None Update="Pages\DetailViews\InfoScreen2.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Pages\DetailViews\TranHistoryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Pages\LandingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
