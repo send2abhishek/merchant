@@ -1,0 +1,15 @@
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\bin\Debug\netstandard2.0\EWallet.Merchant.DAL.dll
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\EWallet.Merchant.csprojAssemblyReference.cache
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\EWallet.Merchant.csproj.CoreCompileInputs.cache
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\EWallet.Merchant.AssemblyInfoInputs.cache
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\EWallet.Merchant.AssemblyInfo.cs
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\bin\Debug\netstandard2.0\EWallet.Merchant.deps.json
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\bin\Debug\netstandard2.0\EWallet.Merchant.dll
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\bin\Debug\netstandard2.0\EWallet.Merchant.pdb
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\bin\Debug\netstandard2.0\EWallet.Merchant.DAL.pdb
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\XamlC.stamp
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\EWallet.Merchant.csproj.CopyComplete
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\EWallet.Merchant.dll
+D:\EWallet.Merchant\EWallet.Merchant\EWallet.Merchant\obj\Debug\netstandard2.0\EWallet.Merchant.pdb
