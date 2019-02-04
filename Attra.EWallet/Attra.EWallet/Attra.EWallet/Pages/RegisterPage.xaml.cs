@@ -1,4 +1,5 @@
-﻿using Attra.EWallet.Services;
+﻿using Attra.EWallet.Interface;
+using Attra.EWallet.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -212,21 +213,27 @@ namespace Attra.EWallet.Pages
 
                 
 
-                ApiServices services = new ApiServices();
-                bool RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
-                  Int32.Parse(entEmpId.Text), entEmail.Text);
+                //ApiServices services = new ApiServices();
+                //DependencyService.Get<RegistertionNotify>().onStartRegistration();
+                //bool RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
+                //  Int32.Parse(entEmpId.Text), entEmail.Text);
 
-                //bool RegistrationStatus = true;
+                bool RegistrationStatus = true;
 
                 if (RegistrationStatus)
                 {
 
-                    await DisplayAlert("Hi", "User Registered...", "Okay");
+                    //DependencyService.Get<RegistertionNotify>().onCompleteRegistration();
+                    //DependencyService.Get<RegistertionNotify>().onRegistrationSucces("User Registered !");
+
+                    ////await DisplayAlert("Hi", "User Registered...", "Okay");
                     await Navigation.PushAsync(new OtpVerify());
                 }
                 else
                 {
-                    await DisplayAlert("Alert", "Something went wrong...", "Cancel");
+                    //DependencyService.Get<RegistertionNotify>().onRegistrationFail("Something Went Wrong !");
+                    //DependencyService.Get<RegistertionNotify>().onCompleteRegistration();
+                    //await DisplayAlert("Alert", "Something went wrong...", "Cancel");
                 }
             }
         }
