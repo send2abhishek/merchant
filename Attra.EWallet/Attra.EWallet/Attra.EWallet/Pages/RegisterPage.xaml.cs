@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using Attra.EWallet.Interface;
 using Attra.EWallet.Services;
+=======
+﻿//using Attra.EWallet.Services;
+>>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +13,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Attra.EWallet.DAL.Services;
 
 namespace Attra.EWallet.Pages
 {
@@ -30,6 +35,12 @@ namespace Attra.EWallet.Pages
         //        SetValue(PinProperty, value);
         //    }
         //}
+
+        private async void OnTapSignin(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Pages.LoginPage());
+        }
+
         public RegisterPage()
         {
             InitializeComponent();
@@ -213,12 +224,23 @@ namespace Attra.EWallet.Pages
 
                 
 
+<<<<<<< HEAD
                 //ApiServices services = new ApiServices();
                 //DependencyService.Get<RegistertionNotify>().onStartRegistration();
                 //bool RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
                 //  Int32.Parse(entEmpId.Text), entEmail.Text);
 
                 bool RegistrationStatus = true;
+=======
+               // ApiServices services = new ApiServices();
+
+                 DAL.Services.ApiServices services = new DAL.Services.ApiServices();
+                bool RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
+                  Int32.Parse(entEmpId.Text), entEmail.Text);
+
+
+                //bool RegistrationStatus = true;
+>>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
 
                 if (RegistrationStatus)
                 {

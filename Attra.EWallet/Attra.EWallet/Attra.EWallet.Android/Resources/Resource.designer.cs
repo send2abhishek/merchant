@@ -2973,7 +2973,11 @@ namespace Attra.EWallet.Droid
 			public const int iPhoneX = 2130837791;
 			
 			// aapt resource value: 0x7f020120
+<<<<<<< HEAD
 			public const int LeftArrow = 2130837792;
+=======
+			public const int lgscreen_bg = 2130837792;
+>>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
 			
 			// aapt resource value: 0x7f020121
 			public const int money_bag = 2130837793;

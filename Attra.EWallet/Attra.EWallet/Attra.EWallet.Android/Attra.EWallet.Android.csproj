@@ -140,7 +140,11 @@
     <AndroidResource Include="Resources\drawable\SendArrow.png" />
     <AndroidResource Include="Resources\drawable\Search.png" />
     <AndroidResource Include="Resources\drawable\LeftArrow.png" />
+<<<<<<< HEAD
     <AndroidResource Include="Resources\drawable\icons_closs_button.png" />
+=======
+    <AndroidResource Include="Resources\drawable\lgscreen_bg.JPG" />
+>>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\eWalletLogo.jpg" />

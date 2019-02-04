@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Attra.EWallet.Pages.CreatePswdPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout>
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Margin="0,20,0,0" Grid.Row="0" Text="Create Password" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <StackLayout Grid.Row="1" Margin="0,20,0,0">
+                        <StackLayout>
+                           
+                            <Label Text="Password" FontSize="Micro" TextColor="Black"/>
+                            <Entry x:Name="Password" Placeholder="*********" FontSize="Micro" IsPassword="True" TextColor="White" Margin="0"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Confirm Password" FontSize="Micro" TextColor="Black"/>
+                            <Entry x:Name="ConfirmPassword" Placeholder="*********" IsPassword="True" FontSize="Micro" TextColor="Black" Margin="0"/>
+                        </StackLayout>
+                        <Button Text="Continue" FontSize="Small" TextColor="White" WidthRequest="30" HeightRequest="40" BackgroundColor="Red" Margin="30,20,30,40"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" VerticalOptions="End">
+                        <!--<BoxView HeightRequest="2" BackgroundColor="White"/>-->
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                            <Label Text="Already have an account?" TextColor="Black" FontSize="Micro"/>
+                            <Label Text="LOGIN" TextColor="Black" FontSize="Micro" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+           
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

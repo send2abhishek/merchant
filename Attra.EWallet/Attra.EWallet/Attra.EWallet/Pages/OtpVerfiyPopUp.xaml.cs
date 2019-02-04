@@ -76,7 +76,15 @@ namespace Attra.EWallet.Pages
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
             PopupNavigation.Instance.PopAsync(true);
+=======
+        private async void OnTapValidate(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new CreatePswdPage());  
+        }
+
+>>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
 
         }
     }
