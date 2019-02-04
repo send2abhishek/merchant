@@ -10,18 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Attra.EWallet.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class OtpVerfiyPopUp 
+	public partial class CreatePswdPage : ContentPage
 	{
-		public OtpVerfiyPopUp ()
+		public CreatePswdPage ()
 		{
 			InitializeComponent ();
 		}
-
-        private async void OnTapValidate(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new CreatePswdPage());  
-        }
-
-
-    }
+	}
 }

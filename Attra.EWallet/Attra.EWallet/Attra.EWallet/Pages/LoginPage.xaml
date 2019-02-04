@@ -3,42 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Attra.EWallet.Pages.LoginPage" BackgroundColor="DarkGray">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid Margin="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="AUTO"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Label Margin="0,30,0,0" Grid.Row="0" Text="LOGIN" FontSize="Medium" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
-                <StackLayout Grid.Row="1" Margin="0,20,0,0">
-                    <StackLayout>
-                        <Label Text="Mobile Number" FontSize="Micro" TextColor="White"/>
-                        <Entry x:Name="Email" Placeholder="10 digit mobile number" FontSize="Micro" TextColor="White" Margin="0"/>
+            <AbsoluteLayout>
+                <StackLayout>
+                    <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Margin="0,30,0,0" Grid.Row="0" Text="LOGIN" FontSize="Medium" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <StackLayout Grid.Row="1" Margin="0,20,0,0">
+                            <StackLayout>
+                                <Label Text="Mobile Number" FontSize="Micro" TextColor="White"/>
+                            <Entry x:Name="Email" Placeholder="10 digit mobile number" Keyboard="Numeric"  TextChanged="MobTextChanged" MaxLength="10" FontSize="Micro" TextColor="White" Margin="0"/>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="Password" FontSize="Micro" TextColor="White"/>
+                            <Entry x:Name="Password" Placeholder="******" IsPassword="True" FontSize="Micro" TextColor="White" Margin="0" TextChanged="PswdTextChanged" MaxLength="10"/>
+                                <Label Text="Forgot Password?" FontAttributes="Italic" HorizontalOptions="End" FontSize="Micro" TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnTapForgotPswd" NumberOfTapsRequired="1"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                            <Button Text="Login" FontSize="Small" TextColor="White" WidthRequest="50" Clicked="OnLoginClick"/>
+                            <Label x:Name="ErrorMsg" FontSize="Micro" IsVisible="False" TextColor="Red"/>
                     </StackLayout>
-                    <StackLayout>
-                        <Label Text="Password" FontSize="Micro" TextColor="White"/>
-                        <Entry x:Name="Password" Placeholder="******" IsPassword="True" FontSize="Micro" TextColor="White" Margin="0"/>
-                        <Label Text="Forgot Password?" FontAttributes="Italic" HorizontalOptions="End" FontSize="Micro" TextColor="White">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnTapForgotPswd" NumberOfTapsRequired="1"/>
-                            </Label.GestureRecognizers>
-                        </Label>
+                        <StackLayout Grid.Row="2" VerticalOptions="End">
+                            <BoxView HeightRequest="2" BackgroundColor="White"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="Don't have an account?" TextColor="White" FontSize="Micro"/>
+                                <Label Text="REGISTER" TextColor="BlueViolet" FontSize="Micro" FontAttributes="Bold">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnTapRegister" NumberOfTapsRequired="1"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            <ContentView x:Name="ForgotPswd_overlay"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="False"
+                         BackgroundColor="#C0808080"
+                         Padding="10,0">
+                <Frame CornerRadius="15" 
+                             BackgroundColor="White"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Padding="10">
+                    <!--<StackLayout Orientation="Vertical"
+                             BackgroundColor="White"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Padding="10">-->
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Enter mobile number" 
+                           FontSize="Small"
+                           TextColor="Black"
+                           HorizontalOptions="Fill"/>
+                        <Entry x:Name="MobileNumber"
+                           Placeholder="Mobile Number"
+                           FontSize="Small"
+                           TextColor="Black"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Submit" FontSize="Small"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
+                            Clicked="OnSendOTPBtnClick"/>
                     </StackLayout>
-                    <Button Text="Login" FontSize="Small" TextColor="White" WidthRequest="50" Clicked="OnLoginClick"/>                    
-                </StackLayout>
-                <StackLayout Grid.Row="2" VerticalOptions="End">
-                    <BoxView HeightRequest="2" BackgroundColor="White"/>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Label Text="Don't have an account?" TextColor="White" FontSize="Micro"/>
-                        <Label Text="REGISTER" TextColor="BlueViolet" FontSize="Micro" FontAttributes="Bold">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnTapRegister" NumberOfTapsRequired="1"/>
-                            </Label.GestureRecognizers>
-                        </Label>                        
-                    </StackLayout>                    
-                </StackLayout>
-            </Grid>
-        </StackLayout>
+                </Frame>
+                </ContentView>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -23,8 +23,7 @@ namespace Attra.EWallet.ServicesLogin
             var httpClient = new HttpClient();
             var json = JsonConvert.SerializeObject(user);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var resposne = await httpClient.PostAsync("http://ec2-13-127-1-106.ap-south-1.compute.amazonaws.com:4000/api/payers/login", content);
-            Console.WriteLine(resposne);
+            var resposne = await httpClient.PostAsync("http://ec2-13-127-1-106.ap-south-1.compute.amazonaws.com:4000/api/payers/login", content);           
             return resposne.IsSuccessStatusCode;
 
         }

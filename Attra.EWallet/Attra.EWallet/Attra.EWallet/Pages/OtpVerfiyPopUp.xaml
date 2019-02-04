@@ -34,7 +34,10 @@
         </StackLayout>
         <Label TextColor="Green"
                 FontSize="16" HorizontalOptions="End"
-                Text="Validate"
-                />
+                Text="Validate">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapValidate" NumberOfTapsRequired="1"/>
+            </Label.GestureRecognizers>
+        </Label>
     </StackLayout>
 </pages:PopupPage>
