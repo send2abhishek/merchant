@@ -1,4 +1,4 @@
-﻿using Attra.EWallet.Services;
+﻿//using Attra.EWallet.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Attra.EWallet.DAL.Services;
 
 namespace Attra.EWallet.Pages
 {
@@ -218,9 +219,12 @@ namespace Attra.EWallet.Pages
 
                 
 
-                ApiServices services = new ApiServices();
+               // ApiServices services = new ApiServices();
+
+                 DAL.Services.ApiServices services = new DAL.Services.ApiServices();
                 bool RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
                   Int32.Parse(entEmpId.Text), entEmail.Text);
+
 
                 //bool RegistrationStatus = true;
 

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Attra.EWallet.ServicesLogin.Modals;
-using Attra.EWallet.ServicesLogin;
+
+using Attra.EWallet.DAL.Services;
 using Attra.EWallet.Pages.Menu;
 using System.Text.RegularExpressions;
 
