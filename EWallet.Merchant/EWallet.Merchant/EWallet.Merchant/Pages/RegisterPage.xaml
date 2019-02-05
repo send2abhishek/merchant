@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EWallet.Merchant.CustomControls"
+             x:Class="EWallet.Merchant.Pages.RegisterPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+
+            <Style x:Key="entryKey" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="Gray" />
+
+
+
+            </Style>
+            <Style x:Key="PinEntry" TargetType="Entry">
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <Setter Property="IsPassword" Value="True"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <!--<Setter Property="HeightRequest" Value="50"/>-->
+                <!--<Setter Property="Margin" Value="8,0"/>-->
+                <Setter Property="PlaceholderColor" Value="white" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Default">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+
+
+                <StackLayout Grid.Row="0" HorizontalOptions="Center" Margin="0,8,0,0">
+
+                    <Label Text="Create a Attra Merchant account" FontSize="20" TextColor="White" />
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Margin="40,8,40,0" Orientation="Vertical" Padding="0" Spacing="0">
+                    
+                    
+                    <!--Field for Name-->
+
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                        <ImageButton  WidthRequest="24" HeightRequest="24" />
+                        <Label Text="Name" FontSize="16" TextColor="White" />
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="36,0,0,0" Spacing="0">
+
+                        <Entry x:Name="entName" Placeholder="Full Name" Style="{StaticResource entryKey}" MaxLength="15" TextChanged="Entry_TextChanged" />
+
+                        <Label x:Name="entNameError" FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End"  />
+
+                    </StackLayout>
+                    
+                    
+                    <!--Field For Location-->
+
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                        <ImageButton  WidthRequest="24" HeightRequest="24" />
+                        <Label Text="Location" FontSize="16" TextColor="White" />
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="36,0,0,0" Spacing="0">
+
+                        <!--<Entry Placeholder="select" Style="{StaticResource entryKey}" MaxLength="15" TextChanged="Entry_TextChanged" />-->
+
+                        <local:CustomPicker x:Name="entLocation" Title="Select" TextColor="Gray">
+                            <Picker.Items>
+                                <x:String>Ec2</x:String>
+                                <x:String>AMR2</x:String>
+                            </Picker.Items>
+                        </local:CustomPicker>
+
+
+                        <Label x:Name="entLocationError"  FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End"  />
+
+                    </StackLayout>
+
+
+                    <!--Field For Merchant Type-->
+
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                        <ImageButton  WidthRequest="24" HeightRequest="24" />
+                        <Label Text="Merchant" FontSize="16" TextColor="White" />
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="36,0,0,0" Spacing="0">
+
+                        <!--<Entry  Placeholder="select" Style="{StaticResource entryKey}" MaxLength="15" TextChanged="Entry_TextChanged" />-->
+
+
+                        <local:CustomPicker x:Name="entMerchant" Title="Select" TextColor="Gray">
+                            <Picker.Items>
+                                <x:String>Vendor 1</x:String>
+                                <x:String>Vendor 2</x:String>
+                            </Picker.Items>
+                        </local:CustomPicker>
+                        
+                        <Label x:Name="entMerchantError" FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End"  />
+
+                    </StackLayout>
+
+
+                    <!--Field For Mobile Number-->
+
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                        <ImageButton WidthRequest="24" HeightRequest="24" />
+                        <Label Text="Mobile Number" FontSize="16" TextColor="White"  />
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="36,0,0,0" Spacing="0">
+
+                        <Entry x:Name="entPhNbr" Placeholder="10 Digit mobile Number" Keyboard="Numeric"  Style="{StaticResource entryKey}"
+                          TextChanged="Entry_TextChanged" MaxLength="10" />
+                        <Label x:Name="entPhNbrError" FontSize="12" IsVisible="False" TextColor="Red" HorizontalTextAlignment="End" />
+                    </StackLayout>
+
+                    <!--Field for Password-->
+
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                        <ImageButton WidthRequest="24" HeightRequest="24" />
+                        <Label Text="Password" FontSize="16" TextColor="White" />
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="36,0,0,0" Spacing="0">
+
+                        <Entry x:Name="entPassword" Placeholder="******" Style="{StaticResource entryKey}" TextChanged="Entry_TextChanged" IsPassword="True" />
+
+                        <Label x:Name="entPasswordError" FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End"  />
+
+                    </StackLayout>
+
+                    <!--Field for Confirm Password-->
+
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                        <ImageButton WidthRequest="24" HeightRequest="24" />
+                        <Label Text="Confirm Password" FontSize="16" TextColor="White" />
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="36,0,0,0" Spacing="0">
+
+                        <Entry x:Name="entCnfPassword" Placeholder="******" Style="{StaticResource entryKey}" IsPassword="True" TextChanged="Entry_TextChanged" />
+                        <Label x:Name="entCnfPasswordError" FontSize="12" IsVisible="False" TextColor="Red"
+                               HorizontalTextAlignment="End"  />
+                    </StackLayout>
+
+                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="35,0,0,0">
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin1" Style="{StaticResource PinEntry}" Placeholder="Set" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                        
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin2" Style="{StaticResource PinEntry}" Placeholder="4" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                        
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin3" Style="{StaticResource PinEntry}" Placeholder="Digit" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                       
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin4" Style="{StaticResource PinEntry}" Placeholder="PIN" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+                        
+                    </StackLayout>
+                </StackLayout>-->
+
+                </StackLayout>
+                <StackLayout Grid.Row="3" HorizontalOptions="Center" Spacing="0">
+
+
+
+                    <Label Text="By Clicking continue you are accepting" TextColor="White" FontSize="Small" />
+
+                    <Label Text="Terms and Conditions" TextColor="Cyan" FontSize="Small"  Margin="40,0,40,0">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                </StackLayout>
+
+
+
+                <StackLayout Grid.Row="4" Margin="60,12,60,0" Spacing="0">
+
+
+                    <Button Text="Continue" BackgroundColor="#f44e1b"  TextColor="White" Clicked="Button_Clicked" />
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="5" Margin="40,10,40,0" Spacing="0">
+
+                    <BoxView HeightRequest="1" Color="White" />
+
+
+
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="Center" Margin="0,8,0,0">
+
+                    <Label Text="Already have an account ?" TextColor="White" />
+                    <Label Text="-SIGN IN" TextColor="Cyan" FontSize="16">
+                        <!--<Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapSignin" NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>-->
+                    </Label>
+
+
+
+
+                </StackLayout>
+
+
+
+
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

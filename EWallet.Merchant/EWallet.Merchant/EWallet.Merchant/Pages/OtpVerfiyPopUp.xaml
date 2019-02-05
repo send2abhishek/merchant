@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:local="clr-namespace:EWallet.Merchant.ViewModels"
+             x:Class="EWallet.Merchant.Pages.OtpVerfiyPopUp">
+    <!--  You can set an animation in the xaml file or in the csharp code behind  -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PinEntry" TargetType="Entry">
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <Setter Property="IsPassword" Value="True"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <!--<Setter Property="HeightRequest" Value="50"/>-->
+                <!--<Setter Property="Margin" Value="8,0"/>-->
+                <!--<Setter Property="PlaceholderColor" Value="white" />-->
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="400"
+                                   DurationOut="300"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
+    <!--  You can use any elements here which are extended from Xamarin.Forms.View  -->
+
+    <Grid
+       BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+
+        </Grid.RowDefinitions>
+
+        <!--Grid.Row="0" for the popup cross button-->
+
+        <StackLayout Grid.Row="0" Margin="4">
+            <ImageButton Source="icons_closs_button.png" WidthRequest="32" HeightRequest="32" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+
+        <!--this stack layout for defining padding and margins-->
+        <StackLayout Margin="8"
+                 Padding="14" Spacing="0">
+
+            <StackLayout Grid.Row="1" Margin="6" Padding="12">
+                <Label Text="Please enter the 4 digit pin" FontSize="Large" TextColor="Black" />
+                <!--<Entry Placeholder="Enter pin" PlaceholderColor="Black" MaxLength="4" Keyboard="Numeric"/>-->
+                <!--Field For Pin Inputs-->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin1" Style="{StaticResource PinEntry}" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin2" Style="{StaticResource PinEntry}">
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin3" Style="{StaticResource PinEntry}" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <local:CutomEntry x:Name="Pin4" Style="{StaticResource PinEntry}" >
+                            <Entry.Behaviors>
+                                <local:EntryLengthValidatorBehavior MaxLength="1"/>
+                            </Entry.Behaviors>
+                        </local:CutomEntry>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Grid.Row="2">
+                <Label Text="Havn't recevied OTP" TextColor="Cyan" FontSize="14" FontAttributes="Italic" />
+                <Label Text="Resend OTP" HorizontalOptions="EndAndExpand" TextColor="Cyan" FontAttributes="Bold" FontSize="16" />
+            </StackLayout>
+            <StackLayout Grid.Row="3" Margin="0,12,0,0">
+                <Label TextColor="Green"
+                FontSize="16" HorizontalOptions="End"
+                Text="VALIDATE"
+                />
+
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+
+
+
+</pages:PopupPage>
