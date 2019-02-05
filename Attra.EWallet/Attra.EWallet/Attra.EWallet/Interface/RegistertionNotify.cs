@@ -7,7 +7,7 @@ namespace Attra.EWallet.Interface
     public interface RegistertionNotify
     {
 
-        void onStartRegistration();
+        void onStartRegistration(string msg);
         void onCompleteRegistration();
         void onRegistrationSucces(String msg);
         void onRegistrationFail(String msg);
