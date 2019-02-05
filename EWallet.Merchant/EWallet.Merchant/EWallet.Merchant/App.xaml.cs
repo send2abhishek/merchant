@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EWallet.Merchant.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace EWallet.Merchant
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new RegisterPage());
         }
 
         protected override void OnStart()

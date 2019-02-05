@@ -7,3 +7,12 @@ D:\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Mercha
 D:\EWallet.Merchant\EWallet.Merchant.DAL\bin\Debug\netstandard2.0\EWallet.Merchant.DAL.pdb
 D:\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.dll
 D:\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.pdb
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\bin\Debug\netstandard2.0\EWallet.Merchant.DAL.deps.json
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\bin\Debug\netstandard2.0\EWallet.Merchant.DAL.dll
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\bin\Debug\netstandard2.0\EWallet.Merchant.DAL.pdb
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.csprojAssemblyReference.cache
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.csproj.CoreCompileInputs.cache
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.AssemblyInfoInputs.cache
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.AssemblyInfo.cs
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.dll
+D:\Projects_Bitbucket\xamarin\EWallet.Merchant\EWallet.Merchant.DAL\obj\Debug\netstandard2.0\EWallet.Merchant.DAL.pdb

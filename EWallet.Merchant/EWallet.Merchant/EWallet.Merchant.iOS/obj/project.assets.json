@@ -712,15 +712,13 @@
   },
   "libraries": {
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
-        "Newtonsoft.Json.12.0.1.nupkg.sha512",
-        "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.pdb",
         "lib/net20/Newtonsoft.Json.xml",
@@ -747,11 +745,13 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml"
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "Rg.Plugins.Popup/1.1.5.188": {
-      "sha512": "PE7uHJ/LuI5pSO1HpgjJ+v2KhNfftzqt/L1AoGH/5mX0fP7pcW6lG4FbUHuCFKolrzJfLLotuuET+hfN50Whpg==",
+      "sha512": "3z5Q6Bdvhi8J2e5Cj0lEQ3rseZXXYTCFd3FjWjDlRbBnJ2vtNPRui5DE8bwWjA2PiDyK+GNj/bhvy+enEzISBA==",
       "type": "package",
       "path": "rg.plugins.popup/1.1.5.188",
       "files": [
@@ -948,20 +948,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\premananada.routray\\.nuget\\packages\\": {}
+    "C:\\Users\\abhishek.kumar1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.iOS\\EWallet.Merchant.iOS.csproj",
+      "projectUniqueName": "D:\\Projects_Bitbucket\\xamarin\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.iOS\\EWallet.Merchant.iOS.csproj",
       "projectName": "EWallet.Merchant.iOS",
-      "projectPath": "D:\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.iOS\\EWallet.Merchant.iOS.csproj",
-      "packagesPath": "C:\\Users\\premananada.routray\\.nuget\\packages\\",
-      "outputPath": "D:\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.iOS\\obj\\",
+      "projectPath": "D:\\Projects_Bitbucket\\xamarin\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.iOS\\EWallet.Merchant.iOS.csproj",
+      "packagesPath": "C:\\Users\\abhishek.kumar1\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects_Bitbucket\\xamarin\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\premananada.routray\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abhishek.kumar1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -974,8 +974,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.csproj": {
-              "projectPath": "D:\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.csproj"
+            "D:\\Projects_Bitbucket\\xamarin\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.csproj": {
+              "projectPath": "D:\\Projects_Bitbucket\\xamarin\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant\\EWallet.Merchant.csproj"
             }
           }
         }

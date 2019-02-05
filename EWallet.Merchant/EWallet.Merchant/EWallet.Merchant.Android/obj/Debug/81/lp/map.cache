@@ -1,6 +1,9 @@
 EWallet.Merchant
-System.Runtime
 FormsViewGroup
+Newtonsoft.Json
+Rg.Plugins.Popup
+Rg.Plugins.Popup.Droid
+System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Lifecycle.Common
 Xamarin.Android.Arch.Lifecycle.Runtime
@@ -24,8 +27,5 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
-Newtonsoft.Json
-Rg.Plugins.Popup
-Rg.Plugins.Popup.Droid
 netstandard
 System.Reflection.Extensions
