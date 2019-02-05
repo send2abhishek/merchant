@@ -27,10 +27,10 @@ namespace Attra.EWallet.Droid.DependencyServices
 
 
 
-        public void onStartRegistration()
+        public void onStartRegistration(string msg)
         {
 
-            progressDialog.SetMessage("Attempting to Register User");
+            progressDialog.SetMessage(msg);
             progressDialog.SetTitle("Please Wait...");
             progressDialog.SetCancelable(false);
             progressDialog.Show();
