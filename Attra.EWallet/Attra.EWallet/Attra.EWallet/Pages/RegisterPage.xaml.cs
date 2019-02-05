@@ -1,9 +1,6 @@
-<<<<<<< HEAD
+
 ﻿using Attra.EWallet.Interface;
-using Attra.EWallet.Services;
-=======
-﻿//using Attra.EWallet.Services;
->>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +11,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Attra.EWallet.DAL.Services;
+using System.Diagnostics;
+using System.Net.Http;
 
 namespace Attra.EWallet.Pages
 {
@@ -21,20 +20,9 @@ namespace Attra.EWallet.Pages
     public partial class RegisterPage : ContentPage
     {
 
-        //public static BindableProperty PinProperty = BindableProperty.
-        //Create("Pin", typeof(string), typeof(RegisterPage), defaultBindingMode: BindingMode.OneWayToSource);
+        string passwordcomplexity = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
 
-        //public string Pin
-        //{
-        //    get
-        //    {
-        //        return (string)GetValue(PinProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(PinProperty, value);
-        //    }
-        //}
+        
 
         private async void OnTapSignin(object sender, EventArgs e)
         {
@@ -44,50 +32,14 @@ namespace Attra.EWallet.Pages
         public RegisterPage()
         {
             InitializeComponent();
-            //this.BackgroundImage = "background_screen_two.png";
+            //this.BackgroundImage = "payee_reg_img.jpg";
 
             NavigationPage.SetHasNavigationBar(this, false);
 
-            //Pin = string.Empty;
-            //Pin1.TextChanged += Pin1_TextChanged;
-            //Pin2.TextChanged += Pin2_TextChanged;
-            //Pin3.TextChanged += Pin3_TextChanged;
-            //Pin4.TextChanged += Pin4_TextChanged;
+            
         }
 
-        //private void Pin4_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    if (Pin4.Text.Length > 0)
-        //        Pin4.Unfocus();
-        //    else
-        //        Pin3.Focus();
-        //    Pin = Pin1.Text + Pin2.Text + Pin3.Text + Pin4.Text;
-        //}
-
-        //private void Pin3_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    if (Pin3.Text.Length > 0)
-        //        Pin4.Focus();
-        //    else
-        //        Pin2.Focus();
-        //    Pin = Pin1.Text + Pin2.Text + Pin3.Text + Pin4.Text;
-        //}
-
-        //private void Pin2_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    if (Pin2.Text.Length > 0)
-        //        Pin3.Focus();
-        //    else
-        //        Pin1.Focus();
-        //    Pin = Pin1.Text + Pin2.Text + Pin3.Text + Pin4.Text;
-        //}
-
-        //private void Pin1_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    if (Pin1.Text.Length > 0)
-        //        Pin2.Focus();
-        //    Pin = Pin1.Text + Pin2.Text + Pin3.Text + Pin4.Text;
-        //}
+        
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -166,6 +118,40 @@ namespace Attra.EWallet.Pages
                 //}
             }
 
+            if (entPassword.IsFocused)
+            {
+
+                Regex regular = new Regex(passwordcomplexity);
+                var password = entPassword.Text;
+                if (!(regular.IsMatch(password)))
+                {
+                    entPasswordError.IsVisible = true;
+                    entPasswordError.Text = "Invalid Password !";
+                }
+                else
+                {
+                    entPasswordError.IsVisible = false;
+                    entPasswordError.Text = "";
+                }
+            }
+
+            if (entCnfPassword.IsFocused)
+            {
+                Regex regular = new Regex(passwordcomplexity);
+                var Confirmpassword = entCnfPassword.Text;
+
+                if (!(regular.IsMatch(Confirmpassword)))
+                {
+                    entCnfPasswordError.IsVisible = true;
+                    entCnfPasswordError.Text = "Invalid Password !";
+                }
+                else
+                {
+                    entCnfPasswordError.IsVisible = false;
+                    entCnfPasswordError.Text = "";
+                }
+            }
+
 
         }
 
@@ -202,12 +188,37 @@ namespace Attra.EWallet.Pages
                 return false;
             }
 
+            else if (String.IsNullOrEmpty(entPassword.Text))
+            {
+                entPasswordError.IsVisible = true;
+                entPasswordError.Text = "Password can't be empty !";
+                return false;
+            }
+
+            else if (String.IsNullOrEmpty(entCnfPassword.Text))
+            {
+                entCnfPasswordError.IsVisible = true;
+                entCnfPasswordError.Text = "Confirm Password can't be empty !";
+                return false;
+            }
+
+            if (!((entPassword.Text.Trim()).Equals(entCnfPassword.Text.Trim())))
+            {
+                entCnfPasswordError.IsVisible = true;
+                entCnfPasswordError.Text = "Password doesn't match with confirm password!";
+                return false;
+            }
+
             else
             {
                 entEmpIdError.IsVisible = false;
                 entPhNbrError.IsVisible = false;
                 entEmailError.IsVisible = false;
                 entNameError.IsVisible = false;
+                entPasswordError.IsVisible = false;
+                entCnfPasswordError.IsVisible = false;
+                entCnfPasswordError.Text = "";
+                entPasswordError.Text = "";
                 entNameError.Text = "";
                 entEmailError.Text = "";
                 entPhNbrError.Text = "";
@@ -222,42 +233,58 @@ namespace Attra.EWallet.Pages
             if (callValidation())
             {
 
-                
 
-<<<<<<< HEAD
-                //ApiServices services = new ApiServices();
-                //DependencyService.Get<RegistertionNotify>().onStartRegistration();
-                //bool RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
-                //  Int32.Parse(entEmpId.Text), entEmail.Text);
 
-                bool RegistrationStatus = true;
-=======
-               // ApiServices services = new ApiServices();
 
-                 DAL.Services.ApiServices services = new DAL.Services.ApiServices();
-                bool RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
-                  Int32.Parse(entEmpId.Text), entEmail.Text);
+
+                DependencyService.Get<RegistertionNotify>().onStartRegistration("Attempting to Register User");
+
+
+                bool RegistrationStatus=false;
+
+
+
+                DAL.Services.ApiServices services = new DAL.Services.ApiServices();
+                try
+                {
+                    RegistrationStatus = await services.RegisterUser(entName.Text, entPhNbr.Text.ToString(),
+                      Int32.Parse(entEmpId.Text), entEmail.Text, entCnfPassword.Text.Trim());
+                }
+
+                catch (Exception ex) {
+
+                    Debug.WriteLine(ex);
+
+                    DependencyService.Get<RegistertionNotify>().onRegistrationFail("Server Down !");
+                }
+
 
 
                 //bool RegistrationStatus = true;
->>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
+
 
                 if (RegistrationStatus)
                 {
 
-                    //DependencyService.Get<RegistertionNotify>().onCompleteRegistration();
-                    //DependencyService.Get<RegistertionNotify>().onRegistrationSucces("User Registered !");
+                    DependencyService.Get<RegistertionNotify>().onCompleteRegistration();
+                    DependencyService.Get<RegistertionNotify>().onRegistrationSucces("User Registered !");
 
                     ////await DisplayAlert("Hi", "User Registered...", "Okay");
-                    await Navigation.PushAsync(new OtpVerify());
+                    await Navigation.PushAsync(new OtpVerify(entEmail.Text, entPhNbr.Text.ToString()));
                 }
                 else
                 {
-                    //DependencyService.Get<RegistertionNotify>().onRegistrationFail("Something Went Wrong !");
-                    //DependencyService.Get<RegistertionNotify>().onCompleteRegistration();
+                    DependencyService.Get<RegistertionNotify>().onRegistrationFail("Something Went Wrong !");
+                    DependencyService.Get<RegistertionNotify>().onCompleteRegistration();
                     //await DisplayAlert("Alert", "Something went wrong...", "Cancel");
                 }
             }
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
+            DisplayAlert("Terms And Conditions", "Terms And Conditions goes here", "Okay");
         }
     }
 }

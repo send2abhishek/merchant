@@ -76,7 +76,7 @@ namespace Attra.EWallet.Pages
         }
         private async void OnSendOTPBtnClick(Object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new OtpVerfiyPopUp());
+            //await Navigation.PushAsync(new OtpVerfiyPopUp());
         }
 
         private void MobTextChanged(Object sender, EventArgs args)

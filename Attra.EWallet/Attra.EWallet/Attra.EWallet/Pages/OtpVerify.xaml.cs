@@ -12,10 +12,10 @@ namespace Attra.EWallet.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OtpVerify : ContentPage
 	{
-		public OtpVerify ()
+		public OtpVerify (string email, string phoneNbr)
 		{
 			InitializeComponent ();
-            PopupNavigation.Instance.PushAsync(new OtpVerfiyPopUp());
+            PopupNavigation.Instance.PushAsync(new OtpVerfiyPopUp(email, phoneNbr));
 
         }
 

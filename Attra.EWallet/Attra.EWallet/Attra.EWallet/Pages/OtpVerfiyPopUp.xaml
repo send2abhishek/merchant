@@ -99,24 +99,28 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" Grid.Row="2">
                 <Label Text="Havn't recevied OTP" TextColor="Cyan" FontSize="14" FontAttributes="Italic" />
-                <Label Text="Resend OTP" HorizontalOptions="EndAndExpand" TextColor="Cyan" FontAttributes="Bold" FontSize="16" />
+                <Label Text="Resend OTP" HorizontalOptions="EndAndExpand" TextColor="Cyan" FontAttributes="Bold" FontSize="16">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_ReSendOTP" NumberOfTapsRequired="1"/>
+                    </Label.GestureRecognizers>
+                </Label> 
             </StackLayout>
             <StackLayout Grid.Row="3" Margin="0,12,0,0">
-                <Label TextColor="Green"
+                <Label TextColor="Green" 
                 FontSize="16" HorizontalOptions="End"
-<<<<<<< HEAD
                 Text="VALIDATE"
-                />
+                >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                    </Label.GestureRecognizers>
+                </Label>
 
             </StackLayout>
         </StackLayout>
     </Grid>
-=======
-                Text="Validate">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnTapValidate" NumberOfTapsRequired="1"/>
-            </Label.GestureRecognizers>
-        </Label>
-    </StackLayout>
->>>>>>> 4d51a25222868ec144393f5f195354a9b7ac8a55
+
+              
+   
+
 </pages:PopupPage>
